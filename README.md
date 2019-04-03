@@ -1,11 +1,11 @@
 # Título del trabajo
-
-Descripción breve del proyecto a realizar (2-3 frases).
+Programa que registra las salidas y entradas de los aviones en un aeropuerto.
+Gestión de aterrizaje y despegue de estos.
 
 ## Integrantes del equipo
 
-Nombres, apellidos, y usuario GitHub de los integrantes del equipo.
+Carlos Rubio Santamaría(cfrubio), Tomás Alda Delgado(tomasalda) e Iker Gorospe Mateos(IkertxoGM).
 
 ## Objetivos del trabajo
 
-Lista de los objetivos que se persiguen con el trabajo propuesto.
+Llevar acabo un sistema coherente al de un aeropuerto real. 
