@@ -1,7 +1,7 @@
 /*Programa que registra los tiempos de 10 aviones en un aeropuerto, cuyos numeros de vuelo van del 1 al 10.
 El menú principal del programa proporciona las siguientes opciones:
 
-1.	Registrar tiempo de un avion.
+1.	Registrar tiempo de aterrizaje de un avion.
 2.	Lista de resultados
 3.	Clasificación de los aterrizajes y despegues
 4.	Tiempo medio de aterrizaje y/o despegue
