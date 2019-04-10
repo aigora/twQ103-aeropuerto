@@ -29,13 +29,20 @@ typedef enum//Defino el tipo boolean porque necesito variables y funciones
         TRUE = 1//pero en todos los códigos y lenguajes está la opción de un tipo bool
 } bool;//que devuelve true y false
 
-typedef struct{
-	int horas;
-	int minutos;
-	int segundos;
-	int toltal;
+typedef struct{ // Estructura para guardar el tiempo de aterrizaje.
+	int horas;//Horas que tarda en aterrizar.
+	int minutos;//Minutos que tarda en aterrizar.
+	int segundos;//Segundos que tarda en aterrizar.
+	int total;//Segundos totales.
 }Tiempo;
 
+typedef struct{ //Estructura anidada de cada avión.
+	
+	int numeroVuelo; //Número propio de cada vuelo
+	char compania[50]; //Compañia de vuelo de cada avión.
+	Tiempo aterrizaje; //Duración del aterrizaje.
+	bool finish; //Sirve para saber si el aterrizaje ya ha terminado.
+}Avion;
 
 
 /*declaración de funciones*/
