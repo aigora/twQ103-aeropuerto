@@ -56,6 +56,11 @@ typedef struct{ //Estructura anidada de cada avión.
 }Avion;
 
 
+typedef struct{
+	
+}
+
+
 /*declaración de funciones*/
 
 int pintaMenu();
