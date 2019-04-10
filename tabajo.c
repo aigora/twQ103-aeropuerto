@@ -10,15 +10,6 @@ La opción 1 debe registrar el tiempo de un avion en horas minutos y segundos, i
 La opción 2 muestra la lista de mejor a peor tiempo.
 La opción 4 indica la media de tiempos de todos los aviones que han finalizado el despegue y/o el aterrizaje
 
-
-NOTA:
--No todos los aviones tienen por qué llegar a la terminal.
--El menú principal y cada una de las opciones se realizarán mediante funciones separadas.
--El código debe ser fácilmente adaptable a un aeropuerto de un número diferente de vuelos.
--Es obligatorio el uso de vectores de estructuras.
--Es obligatorio el uso de ficheros.  <------------HE PUESTO ASTERISCOS (*) PARA QUE SE VEA DÓNDE LOS HE USADO
-
-
 */
 
 
@@ -26,6 +17,9 @@ NOTA:
 #include <stdlib.h>
 #include <string.h>
 
+
+
+#define NUM_VUELOS 15//Vuelos previstos en un día.
 #define OK 0//Defino los valores a devolver por cada una de las funciones
 #define ERROR -1//Uso OK y ERROR en lugar de 0 ó 1 pues es mucho más visual
 
