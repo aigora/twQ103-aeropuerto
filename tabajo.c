@@ -104,19 +104,22 @@ inicializaAterrizaje(&tablaAterrizaje);//Llamo a la función que inicializa los 
            system ("pause");
            break;   
 			case 1://Si se marca 1: se registra un vuelo
-			registraAvion
+			registraAvion(&tablaAterrizaje, pcorref);
            				break;
 			case 2://Si se marca 2: se lista panel de estado de vuelos
+			listaAterrizaje(tablaAterrizaje.lista);
            				break;
 			case 3://Si se marca 3: se muestra la clasificación
+			ordenarAterrizaje(&tablaAterrizaje);
             				break;	
 			case 4://Si se marca 4: se saca la media
+			mediaAterrizaje(tablaAterrizaje.lista, tablaAterrizaje.finished);
     				break;
 			default://Cualquier otra opción: no vale
 				break;
 		}
 	}
-	
+	fclose(pcorref);****
 	system("PAUSE");
 }
 	
