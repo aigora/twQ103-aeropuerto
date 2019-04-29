@@ -56,9 +56,14 @@ typedef struct{ //Estructura anidada de cada avión.
 }Avion;
 
 
-typedef struct{
-	
-}
+typedef struct//Estructura del aterrizaje
+{
+	bool refresh;//Flag para actualizar la clasificación
+	int finished;//Número de aviones que han aterrizado
+	Avion lista[NUM_VUELOS];//Vector de aviones
+	int clasif[NUM_VUELOS];//Vector con posiviones de la tabla de aterrizajes
+}Aterrizaje;
+		
 
 
 /*declaración de funciones*/
