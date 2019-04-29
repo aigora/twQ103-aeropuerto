@@ -62,7 +62,7 @@ typedef struct//Estructura del aterrizaje
 	bool refresh;//Flag para actualizar la clasificación
 	int finished;//Número de aviones que han aterrizado
 	Avion lista[NUM_VUELOS];//Vector de aviones
-	int clasif[NUM_VUELOS];//Vector con posiviones de la tabla de aterrizajes
+	int clasif[NUM_VUELOS];//Vector con posiciones de la tabla de aterrizajes
 }Aterrizaje;
 		
 
@@ -172,17 +172,23 @@ int registraAvion(Aterrizaje*tabla, FILE*pcorref)//Función que registra un avi�
 			correct=TRUE;//Se cumplen todas las sentencias.
 		else//Seguirá preguntando hasta que los datos estén correctos.
 		{
-		  
-			
+			printf("\tLos datos introducidos presentan algún error por favor intoduzcalos de nuevo.\n");
+			scanf("%d %d %d %d",&numeroVuelo,&horas,&minutos,&segundos);
 		}
-		
-	
-	       
-	       
-
 	}
 
-
+	//Se añade el Avión.
+	       
+	tabla->refresh=TRUE;//Hay que ir actualizando los aviones que salen y entran, si es que no estaban ya registrados.
+	if(tabla->lista[numeroVuelo-1].finish=FALSE)
+	tabla->finished++;//Incrementamos el numero de aviones que tenemos.
+	       
+	//getchar( ); 
+	fflush(stdin);
+	printf("Introduzca el nombre de la compania aerea.\n");
+	gets(compania);
+	
+	
 
 
 	
