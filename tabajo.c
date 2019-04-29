@@ -70,6 +70,10 @@ typedef struct//Estructura del aterrizaje
 
 void inicializaAterrizaje (Aterrizaje *tabla);//!!!!!!!!!!!!!!
 int pintaMenu();
+int registraAvion(Aterrizaje *tabla, FILE *);//*****
+int listaAterrizaje(Avion *tabla);
+int ordenarAterrizaje(Aterrizaje *tabala);//*****
+int mediaAterrizaje(Avion *tabla, int n);
 
 
 int main ()
@@ -78,10 +82,15 @@ int main ()
 
 int leido=-1; //Variable para el menú
 	FILE *pcorref;/***********
-	char avionesFile[50], clasificacionFile[50];//Ficheros para guardar los aviones y la clasificacion ************
+	char avionesFile[50], clasificacionFile[50];    //Ficheros para guardar los aviones y la clasificacion ************
+	
 	printf("Diga el nombre del fichero para guardar los aviones\n");
+	
 	gets(avionesFILE);//Se recoge el nombre del fichero
+	
 	pcorref = fopen(avionesFILE, "a+");//********
+	
+	
 
 inicializaAterrizaje(&tablaAterrizaje);//Llamo a la función que inicializa los valores
 
