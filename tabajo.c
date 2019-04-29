@@ -104,6 +104,7 @@ inicializaAterrizaje(&tablaAterrizaje);//Llamo a la función que inicializa los 
            system ("pause");
            break;   
 			case 1://Si se marca 1: se registra un vuelo
+			registraAvion
            				break;
 			case 2://Si se marca 2: se lista panel de estado de vuelos
            				break;
