@@ -8,6 +8,7 @@ El menú principal del programa proporciona las siguientes opciones:
 
 La opción 1 debe registrar el tiempo de un avion en horas minutos y segundos, indicando su numero de vuelo.
 La opción 2 muestra la lista de mejor a peor tiempo.
+La opción 3 una tabla con los horarios de aterrizajes y despegues.
 La opción 4 indica la media de tiempos de todos los aviones que han finalizado el despegue y/o el aterrizaje
 
 
@@ -72,7 +73,7 @@ void inicializaAterrizaje (Aterrizaje *tabla);//!!!!!!!!!!!!!!
 int pintaMenu();
 int registraAvion(Aterrizaje *tabla, FILE *);//*****
 int listaAterrizaje(Avion *tabla);
-int ordenarAterrizaje(Aterrizaje *tabala);//*****
+int ordenarAterrizaje(Aterrizaje *tabla);//*****
 int mediaAterrizaje(Avion *tabla, int n);
 
 
@@ -81,14 +82,14 @@ int main ()
 	Aterrizaje tablaAterrizaje;//Objeto principal   
 
 int leido=-1; //Variable para el menú
-	FILE *pcorref;/***********
-	char avionesFile[50], clasificacionFile[50];    //Ficheros para guardar los aviones y la clasificacion ************
+	FILE *pcorref;//***********
+	char avionesFile[50], clasificacionFile[50]; //Ficheros para guardar los aviones y la clasificacion ************
 	
 	printf("Diga el nombre del fichero para guardar los aviones\n");
 	
-	gets(avionesFILE);//Se recoge el nombre del fichero
+	gets(avionesFile);//Se recoge el nombre del fichero
 	
-	pcorref = fopen(avionesFILE, "a+");//********
+	pcorref = fopen(avionesFile, "a+");//********
 	
 	
 
@@ -119,7 +120,7 @@ inicializaAterrizaje(&tablaAterrizaje);//Llamo a la función que inicializa los 
 				break;
 		}
 	}
-	fclose(pcorref);****
+	fclose(pcorref);//*****
 	system("PAUSE");
 }
 	
@@ -147,5 +148,41 @@ inicializaAterrizaje(&tablaAterrizaje);//Llamo a la función que inicializa los 
 	else
 		return option;
 		
-	return OK;     
+	return OK;    
 }
+
+int registraAvion(Aterrizaje*tabla, FILE*pcorref)//Función que registra un avión.{
+
+
+	int numeroVuelo, horas,minutos, segundos;
+	char compania[50];
+	bool correct=FALSE;
+
+	printf("\n Proceso de registro de un vuelo.\n");
+	printf("Indique el numero de vuelo y el tiempo del mismo.\n);
+	printf("\t\t Numero de vuelo Horas Minutos Segundos\n\n");
+	printf("Por ejemplo:\n");
+	printf("\t\t 0000 10 30 10\n");
+	
+	scanf("%d %d %d %d",&numeroVuelo,&horas,&minutos,&segundos);
+	
+	while(correct==FALSE)//Control de errores para comprobar que las cosas introducidas están de acuerdo a lo pedido.
+	{
+		if((numeroVuelo<NUM_VUELOS)&&(numeroVuelo>0) && (horas>=0) && (minutos>=0) && (minutos<=59) && (segundos>=0) && (segundos<=59))
+			correct=TRUE;//Se cumplen todas las sentencias.
+		else//Seguirá preguntando hasta que los datos estén correctos.
+		{
+		  
+			
+		}
+		
+	
+	       
+	       
+
+	}
+
+
+
+
+	
