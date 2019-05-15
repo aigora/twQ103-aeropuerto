@@ -224,6 +224,8 @@ int registraAvion(Aterrizaje*tabla, FILE*pcorref)//Función que registra un avi�
   	return OK;     
 
 }
+
+
 int listaAterrizaje(Avion *tabla)//Función que muestra el estado del vuelo
 {
     int i;
