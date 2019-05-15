@@ -260,6 +260,67 @@ int listaAterrizaje(Avion *tabla)//Función que muestra el estado del vuelo
        system("pause");
       return OK;    
 }
-       
 	
+	
+	
+       
+int orderAterrizaje(Aterrizaje *tabla)//Función que ordena el vector de aviones
+{
+    int i, j, tam;
+    FILE  *pclasif;//  *********************
+    char clasificacionFile[50];
+    
+    fflush(stdin);      
+	printf("Diga el nombre del fichero para guardar la clasificacion\n");//Se recoge el nombre del fichero    ***********
+    gets(clasificacionFile);//  *****************
+   
+    pclasif = fopen(clasificacionFile,"w+");//  ********************
+    int corrIzq, corrDer;
+    int posicionAvion;
+    tam=tabla->finished;//Se saca el tamaño de los que han acabado
+    
+    if(tabla->refresh==TRUE)//Si se ha hecho alguna inserción
+    {//Se recrea el vector con las posiciones de los corredores según el ORDEN del DORSAL
+    i=0;
+    for (j=0;j<NUM_VUELOS;j++)
+    {
+        if(tabla->lista[j].finish==TRUE && i<tam)
+        {
+            tabla->clasif[i]=j;
+            i++;
+        }    
+     }
+     for (i=1; i<tam; i++)//Ahora se recorre el vector ordenando
+     {
+         for (j=0 ; j<tam - 1; j++)
+         {
+             corrIzq=tabla->clasif[j];
+             corrDer=tabla->clasif[j+1];
+             if (tabla->lista[corrIzq].reloj.total > tabla->lista[corrDer].reloj.total)//Si la posición de al lado es menor, se intercambian posiciones
+             {
+                   tabla->clasif[j] = corrDer;//Se mete la menor a la izquierda
+                   tabla->clasif[j+1] = corrIzq;//Se mete a la derecha el valor que había en la inzquiera
+            }
+          }  
+     }              
+   }
+
+printf("Clasificacion de maraton\n\tPuesto\tDorsal\tTiempo\tNombre\n");
+
+for(i=0;i<tam;i++)//Ahora se recorre el vector de manera habitual
+  
+	{
+       posicionAvion=tabla->clasif[i];           
+       fprintf(pclasif,"%d [%d] %d:%d:%d %s",i+1,tabla->lista[posicionAvion].dorsal,tabla->lista[posicionAvion].reloj.horas,
+       tabla->lista[posicionCorredor].reloj.minutos,tabla->lista[posicionAvion].reloj.segundos, tabla->lista[posicionAvion].nombre); 
+	   printf("\t%d \t[%d] \t%d:%d:%d \t%s\n",i+1,tabla->lista[posicionAvion].dorsal, tabla->lista[posicionAvion].reloj.horas,
+       tabla->lista[posicionAvion].reloj.minutos,tabla->lista[posicionAvion].reloj.segundos, tabla->lista[posicionAvion].nombre);
+    }
+	
+	
+    
+    fclose(pclasif);//  *********************
+
+system("pause");
+}	
 	   
