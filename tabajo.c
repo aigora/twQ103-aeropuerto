@@ -311,10 +311,10 @@ for(i=0;i<tam;i++)//Ahora se recorre el vector de manera habitual
   
 	{
        posicionAvion=tabla->clasif[i];           
-       fprintf(pclasif,"%d [%d] %d:%d:%d %s",i+1,tabla->lista[posicionAvion].dorsal,tabla->lista[posicionAvion].reloj.horas,
-       tabla->lista[posicionCorredor].reloj.minutos,tabla->lista[posicionAvion].reloj.segundos, tabla->lista[posicionAvion].nombre); 
-	   printf("\t%d \t[%d] \t%d:%d:%d \t%s\n",i+1,tabla->lista[posicionAvion].dorsal, tabla->lista[posicionAvion].reloj.horas,
-       tabla->lista[posicionAvion].reloj.minutos,tabla->lista[posicionAvion].reloj.segundos, tabla->lista[posicionAvion].nombre);
+       fprintf(pclasif,"%d [%d] %d:%d:%d %s",i+1,tabla->lista[posicionAvion].numeroVuelo,tabla->lista[posicionAvion].aterrizaje.horas,
+       tabla->lista[posicionAvion].aterrizaje.minutos,tabla->lista[posicionAvion].aterrizaje.segundos, tabla->lista[posicionAvion].compania); 
+	   printf("\t%d \t[%d] \t%d:%d:%d \t%s\n",i+1,tabla->lista[posicionAvion].dorsal, tabla->lista[posicionAvion].aterrizaje.horas,
+       tabla->lista[posicionAvion].aterrizaje.minutos,tabla->lista[posicionAvion].aterrizaje.segundos, tabla->lista[posicionAvion].compania);
     }
 	
 	
