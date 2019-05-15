@@ -28,7 +28,7 @@ NOTA:
 
 
 
-#define NUM_VUELOS 5//Vuelos previstos en un día.
+#define NUM_VUELOS 10//Vuelos previstos en un día.
 #define OK 0//Defino los valores a devolver por cada una de las funciones
 #define ERROR -1//Uso OK y ERROR en lugar de 0 ó 1 pues es mucho más visual
 
@@ -262,7 +262,7 @@ int ordenarAterrizaje(Aterrizaje *tabla)//Función que ordena el vector de avion
     tam=tabla->finished;//Se saca el tamaño de los que han acabado
     
     if(tabla->refresh==TRUE)//Si se ha hecho alguna inserción
-    {//Se recrea el vector con las posiciones de los corredores según el ORDEN del DORSAL
+    {//Se recrea el vector con las posiciones de los aviones según el ORDEN del NUMERO DE VUELO
     i=0;
     for (j=0;j<NUM_VUELOS;j++)
     {
@@ -313,9 +313,9 @@ int mediaAterrizaje(Avion *tabla, int n)//Función que calcula la media de los f
 	float media=0.0;
 	int i;
 	int hr,sec,min;
-    if (n>0)//Si hay algún corredor que ha finalizado
+    if (n>0)//Si hay algún vuelo que ha finalizado
     {
-                 for(i=0;i<NUM_VUELOS;i++)//Se suman todos los segundos totales de los corredores
+                 for(i=0;i<NUM_VUELOS;i++)//Se suman todos los segundos totales de los aviones
                  {
                               if(tabla[i].finish==TRUE)
                               media+=tabla[i].aterrizaje.total;
