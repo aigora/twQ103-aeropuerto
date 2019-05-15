@@ -196,11 +196,11 @@ int registraAvion(Aterrizaje*tabla, FILE*pcorref)//Función que registra un avi�
 	tabla->lista[numeroVuelo-1].numeroVuelo=numeroVuelo;
 	tabla->lista[numeroVuelo-1].finish=TRUE;
 	strcpy(tabla->lista[numeroVuelo-1].compania,compania);
-	tabla->lista[numeroVuelo-1].reloj.horas=horas;
-	tabla->lista[numeroVuelo-1].reloj.minutos=minutos;
-	tabla->lista[numeroVuelo-1].reloj.segundos=segundos;
-	tabla->lista[numeroVuelo-1].reloj.total=horas*60*60+minutos*60+segundos;//Tiempo en segundos
-	fprintf(pcorref,"%d  %d %d %d %d %s", numeroVuelo, 1, horas, minutos, segundos, nombre);
+	tabla->lista[numeroVuelo-1].aterrizaje.horas=horas;
+	tabla->lista[numeroVuelo-1].aterrizaje.minutos=minutos;
+	tabla->lista[numeroVuelo-1].aterrizaje.segundos=segundos;
+	tabla->lista[numeroVuelo-1].aterrizaje.total=horas*60*60+minutos*60+segundos;//Tiempo en segundos
+	fprintf(pcorref,"%d  %d %d %d %d %s", numeroVuelo, 1, horas, minutos, segundos, compania);
   	return OK;     
 
 
@@ -213,7 +213,7 @@ int listaAterrizaje(Avion *tabla)//Función que muestra el estado del vuelo
     for (i=0;i<NUM_VUELOS;i++)//Se recorre la lista mostrando los datos
     {
         if(tabla[i].finish==TRUE)//Si ha finalizado se muestra el tiempo
-        printf("\t%d\t%d:%d:%d\n",tabla[i].numeroVuelo,tabla[i].reloj.horas,tabla[i].reloj.minutos,tabla[i].reloj.segundos);
+        printf("\t%d\t%d:%d:%d\n",tabla[i].numeroVuelo,tabla[i].aterrizaje.horas,tabla[i].aterrizaje.minutos,tabla[i].aterrizaje.segundos);
         else//Si no ha finalizado se muestra el mensaje
         printf("\t%d\tNo finalizado.\n",tabla[i].numeroVuelo);
      }
