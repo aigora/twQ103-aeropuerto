@@ -210,7 +210,7 @@ int registraAvion(Aterrizaje*tabla, FILE*pcorref)//Función que registra un avi�
 	
 	
 //El numero de vuelo siempre estará 1 por encima de la posición del vector
-//Es decir: que en la posición 0 del vector, estará almacenado el dorsal 1 
+//Es decir: que en la posición 0 del vector, estará almacenado el numero de vuelo 1 
 
 	tabla->lista[numeroVuelo-1].numeroVuelo=numeroVuelo;
 	tabla->lista[numeroVuelo-1].finish=TRUE;
