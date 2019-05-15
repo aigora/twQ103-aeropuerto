@@ -28,7 +28,7 @@ NOTA:
 
 
 
-#define NUM_VUELOS 15//Vuelos previstos en un día.
+#define NUM_VUELOS 5//Vuelos previstos en un día.
 #define OK 0//Defino los valores a devolver por cada una de las funciones
 #define ERROR -1//Uso OK y ERROR en lugar de 0 ó 1 pues es mucho más visual
 
