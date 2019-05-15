@@ -121,10 +121,49 @@ inicializaAterrizaje(&tablaAterrizaje);//Llamo a la función que inicializa los 
 		}
 	}
 	fclose(pcorref);//*****
-	system("PAUSE");
+	return OK;
 }
 	
-	
+
+void inicializaAterrizaje (MAterrizaje *tabla)//Función que inicializa la estructura del aterrizaje
+{
+	int i;	
+	tabla->refresh=FALSE;//No hay inserciones->no es necesario ordenación si preguntan la clasificación                        
+    tabla->finished=0;//Nadie ha acabado->contador de aviones finalizados = 0
+	                            
+	for (i=0;i<NUM_VUELOS;i++)//Se recorre la lista de vuelos
+	{
+		tabla->lista[i].numeroVuelo=i+1;//Se sabe el numero de vuelo
+		tabla->lista[i].finish=FALSE;//No ha terminado
+		tabla->lista[i].aterrizaje.horas=-1;//Tiempo
+		tabla->lista[i].aterrizaje.minutos=-1;
+		tabla->lista[i].aterrizaje.segundos=-1;
+		tabla->lista[i].aterrizaje.total=-1;
+		tabla->clasif[i]=0;//Se rellena la lista que llevará el orden
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	int pintaMenu()//Función que muestra el menú y captura la opción del usuario
 {
 	int option=0,cde;
