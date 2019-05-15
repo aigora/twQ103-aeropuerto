@@ -202,4 +202,24 @@ int registraAvion(Aterrizaje*tabla, FILE*pcorref)//Función que registra un avi�
 	fprintf(pcorref,"%d  %d %d %d %d %s", numeroVuelo, 1, horas, minutos, segundos, nombre);
   	return OK;     
 
+
+int listaAterrizaje(Avion *tabla)//Función que muestra el estado del vuelo
+{
+    int i;
+    printf("Listado de vuelo:\n");
+	printf("\tNumero de vuelo\tTiempo (hh:mm:ss)\n");
 	
+    for (i=0;i<NUM_VUELOS;i++)//Se recorre la lista mostrando los datos
+    {
+        if(tabla[i].finish==TRUE)//Si ha finalizado se muestra el tiempo
+        printf("\t%d\t%d:%d:%d\n",tabla[i].numeroVuelo,tabla[i].reloj.horas,tabla[i].reloj.minutos,tabla[i].reloj.segundos);
+        else//Si no ha finalizado se muestra el mensaje
+        printf("\t%d\tNo finalizado.\n",tabla[i].numeroVuelo);
+     }
+        
+       system("pause");
+      return OK;    
+}
+       
+	
+	   
