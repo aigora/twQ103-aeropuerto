@@ -296,7 +296,7 @@ int orderAterrizaje(Aterrizaje *tabla)//Función que ordena el vector de aviones
          {
              corrIzq=tabla->clasif[j];
              corrDer=tabla->clasif[j+1];
-             if (tabla->lista[corrIzq].reloj.total > tabla->lista[corrDer].reloj.total)//Si la posición de al lado es menor, se intercambian posiciones
+             if (tabla->lista[corrIzq].aterrizaje.total > tabla->lista[corrDer].aterrizaje.total)//Si la posición de al lado es menor, se intercambian posiciones
              {
                    tabla->clasif[j] = corrDer;//Se mete la menor a la izquierda
                    tabla->clasif[j+1] = corrIzq;//Se mete a la derecha el valor que había en la inzquiera
@@ -305,7 +305,7 @@ int orderAterrizaje(Aterrizaje *tabla)//Función que ordena el vector de aviones
      }              
    }
 
-printf("Clasificacion de maraton\n\tPuesto\tDorsal\tTiempo\tNombre\n");
+printf("Clasificacion de Aterrizaje\n\tPuesto\tNumero de vuelo\tTiempo\tcompania aerea\n");
 
 for(i=0;i<tam;i++)//Ahora se recorre el vector de manera habitual
   
@@ -323,4 +323,39 @@ for(i=0;i<tam;i++)//Ahora se recorre el vector de manera habitual
 
 system("pause");
 }	
-	   
+
+	
+	
+int mediaAterrizaje(Avion *tabla, int n)//Función que calcula la media de los finalizados
+{
+	float media=0.0;
+	int i;
+	int hr,sec,min;
+    if (n>0)//Si hay algún corredor que ha finalizado
+    {
+                 for(i=0;i<NUM_VUELOS;i++)//Se suman todos los segundos totales de los corredores
+                 {
+                              if(tabla[i].finish==TRUE)
+                              media+=tabla[i].aterrizaje.total;
+                 }
+                 media=media/n;//Se hace la media
+                 sec=media;//Se pasan los segundos a horas, minutos y segundos
+                 hr = sec / (60*60);//Se sacan las horas que no caben, que está almacenado en un entero.
+                 sec %= 60*60;//Resto que ha quedado
+                 min = sec / 60;//Minutos completos que se pueden sacar
+                 sec %= 60;//Resto, que son los segundos
+    }
+    else//Si no hay ningún finalizado
+    {
+             media=0.0;
+             hr=0;
+             min=0;
+             sec=0;
+    }
+    
+	printf("\nMedia del aterrizajen: %d:%d:%d (%d finalizados de %d participantes)\n", hr,min,sec , n, NUM_VUELOS);
+	
+ system("pause");
+	return OK;
+}
+	
