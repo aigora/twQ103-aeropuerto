@@ -151,7 +151,8 @@ inicializaAterrizaje(&tablaAterrizaje);//Llamo a la funci처n que inicializa los 
 	return OK;    
 }
 
-int registraAvion(Aterrizaje*tabla, FILE*pcorref)//Funci처n que registra un avi처n.{
+int registraAvion(Aterrizaje*tabla, FILE*pcorref)//Funci처n que registra un avi처n.
+{
 
 
 	int numeroVuelo, horas,minutos, segundos;
@@ -159,7 +160,7 @@ int registraAvion(Aterrizaje*tabla, FILE*pcorref)//Funci처n que registra un avi�
 	bool correct=FALSE;
 
 	printf("\n Proceso de registro de un vuelo.\n");
-	printf("Indique el numero de vuelo y el tiempo del mismo.\n);
+	printf("Indique el numero de vuelo y el tiempo del mismo.\n");
 	printf("\t\t Numero de vuelo Horas Minutos Segundos\n\n");
 	printf("Por ejemplo:\n");
 	printf("\t\t 0000 10 30 10\n");
