@@ -171,7 +171,7 @@ void inicializaAterrizaje (Aterrizaje *tabla)//Función que inicializa la estruc
 	return OK;    
 }
 
-int registraAvion(Aterrizaje*tabla, FILE*pcorref)//Función que registra un avión.
+int registraAvion(Aterrizaje *tabla, FILE *pcorref)//Función que registra un avión.
 {
 
 
