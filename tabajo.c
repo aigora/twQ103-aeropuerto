@@ -125,7 +125,7 @@ inicializaAterrizaje(&tablaAterrizaje);//Llamo a la función que inicializa los 
 }
 	
 
-void inicializaAterrizaje (MAterrizaje *tabla)//Función que inicializa la estructura del aterrizaje
+void inicializaAterrizaje (Aterrizaje *tabla)//Función que inicializa la estructura del aterrizaje
 {
 	int i;	
 	tabla->refresh=FALSE;//No hay inserciones->no es necesario ordenación si preguntan la clasificación                        
