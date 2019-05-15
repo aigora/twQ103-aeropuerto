@@ -245,7 +245,7 @@ int listaAterrizaje(Avion *tabla)//Función que muestra el estado del vuelo
 	
 	
        
-int orderAterrizaje(Aterrizaje *tabla)//Función que ordena el vector de aviones
+int ordenarAterrizaje(Aterrizaje *tabla)//Función que ordena el vector de aviones
 {
     int i, j, tam;
     FILE  *pclasif;//  *********************
