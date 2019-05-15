@@ -145,25 +145,6 @@ void inicializaAterrizaje (Aterrizaje *tabla)//Función que inicializa la estruc
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	int pintaMenu()//Función que muestra el menú y captura la opción del usuario
 {
 	int option=0,cde;
@@ -242,7 +223,7 @@ int registraAvion(Aterrizaje*tabla, FILE*pcorref)//Función que registra un avi�
 	fprintf(pcorref,"%d  %d %d %d %d %s", numeroVuelo, 1, horas, minutos, segundos, compania);
   	return OK;     
 
-
+}
 int listaAterrizaje(Avion *tabla)//Función que muestra el estado del vuelo
 {
     int i;
