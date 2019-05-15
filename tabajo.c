@@ -204,8 +204,7 @@ int registraAvion(Aterrizaje*tabla, FILE*pcorref)//FunciÃ³n que registra un aviÃ
 	if(tabla->lista[numeroVuelo-1].finish=FALSE)
 	tabla->finished++;//Incrementamos el numero de aviones que tenemos.
 	       
-	//getchar( ); 
-	fflush(stdin);
+	getchar( ); 
 	printf("Introduzca el nombre de la compania aerea.\n");
 	gets(compania);
 	
