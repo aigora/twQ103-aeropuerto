@@ -193,7 +193,7 @@ int registraAvion(Aterrizaje *tabla, FILE *pcorref)//Función que registra un av
 			correct=TRUE;//Se cumplen todas las sentencias.
 		else//Seguirá preguntando hasta que los datos estén correctos.
 		{
-			printf("\tLos datos introducidos presentan algún error por favor intoduzcalos de nuevo.\n");
+			printf("\tHay algun error en los datos. Pruebe de nuevo. (Recuerde: Numero de vuelo horas minutos segundo).\n");
 			scanf("%d %d %d %d",&numeroVuelo,&horas,&minutos,&segundos);
 		}
 	}
