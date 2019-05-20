@@ -52,7 +52,7 @@ typedef struct{ //Estructura anidada de cada avión.
 	
 	int numeroVuelo; //Número propio de cada vuelo
 	char compania[50]; //Compañia de vuelo de cada avión.
-	Tiempo aterrizaje; //Duración del aterrizaje.
+	Tiempo reloj; //Duración del aterrizaje.
 	bool finish; //Sirve para saber si el aterrizaje ya ha terminado.
 }Avion;
 
@@ -135,10 +135,10 @@ void inicializaAterrizaje (Aterrizaje *tabla)//Función que inicializa la estruc
 	{
 		tabla->lista[i].numeroVuelo=i+1;//Se sabe el numero de vuelo
 		tabla->lista[i].finish=FALSE;//No ha terminado
-		tabla->lista[i].aterrizaje.horas=-1;//Tiempo
-		tabla->lista[i].aterrizaje.minutos=-1;
-		tabla->lista[i].aterrizaje.segundos=-1;
-		tabla->lista[i].aterrizaje.total=-1;
+		tabla->lista[i].reloj.horas=-1;//Tiempo
+		tabla->lista[i].reloj.minutos=-1;
+		tabla->lista[i].reloj.segundos=-1;
+		tabla->lista[i].reloj.total=-1;
 		tabla->clasif[i]=0;//Se rellena la lista que llevará el orden
 	}
 }
@@ -175,7 +175,7 @@ int registraAvion(Aterrizaje *tabla, FILE *pcorref)//Función que registra un av
 {
 
 
-	int numeroVuelo, horas,minutos, segundos;
+	int numeroVuelo, horas, minutos, segundos;
 	char compania[50];
 	bool correct=FALSE;
 
