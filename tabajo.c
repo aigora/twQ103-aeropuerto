@@ -215,11 +215,11 @@ int registraAvion(Aterrizaje *tabla, FILE *pcorref)//Función que registra un av
 	tabla->lista[numeroVuelo-1].numeroVuelo=numeroVuelo;
 	tabla->lista[numeroVuelo-1].finish=TRUE;
 	strcpy(tabla->lista[numeroVuelo-1].compania,compania);
-	tabla->lista[numeroVuelo-1].aterrizaje.horas=horas;
-	tabla->lista[numeroVuelo-1].aterrizaje.minutos=minutos;
-	tabla->lista[numeroVuelo-1].aterrizaje.segundos=segundos;
-	tabla->lista[numeroVuelo-1].aterrizaje.total=horas*60*60+minutos*60+segundos;//Tiempo en segundos
-	fprintf(pcorref,"%d  %d %d %d %d %s", numeroVuelo, 1, horas, minutos, segundos, compania);
+	tabla->lista[numeroVuelo-1].reloj.horas=horas;
+	tabla->lista[numeroVuelo-1].reloj.minutos=minutos;
+	tabla->lista[numeroVuelo-1].reloj.segundos=segundos;
+	tabla->lista[numeroVuelo-1].reloj.total=horas*60*60+minutos*60+segundos;//Tiempo en segundos
+	fprintf(pcorref,"%d %s %d %d %d %d", numeroVuelo, compania, 1, horas, minutos, segundos);
   	return OK;     
 
 }
