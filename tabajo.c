@@ -316,7 +316,7 @@ int mediaAterrizaje(Avion *tabla, int n)//Función que calcula la media de los f
                  for(i=0;i<NUM_VUELOS;i++)//Se suman todos los segundos totales de los aviones
                  {
                               if(tabla[i].finish==TRUE)
-                              media+=tabla[i].aterrizaje.total;
+                              media+=tabla[i].reloj.total;
                  }
                  media=media/n;//Se hace la media
                  sec=media;//Se pasan los segundos a horas, minutos y segundos
