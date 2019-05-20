@@ -278,7 +278,7 @@ int ordenarAterrizaje(Aterrizaje *tabla)//Función que ordena el vector de avion
          {
              corrIzq=tabla->clasif[j];
              corrDer=tabla->clasif[j+1];
-             if (tabla->lista[corrIzq].aterrizaje.total > tabla->lista[corrDer].aterrizaje.total)//Si la posición de al lado es menor, se intercambian posiciones
+             if (tabla->lista[corrIzq].reloj.total > tabla->lista[corrDer].reloj.total)//Si la posición de al lado es menor, se intercambian posiciones
              {
                    tabla->clasif[j] = corrDer;//Se mete la menor a la izquierda
                    tabla->clasif[j+1] = corrIzq;//Se mete a la derecha el valor que había en la inzquiera
