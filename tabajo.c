@@ -201,7 +201,7 @@ int registraAvion(Aterrizaje *tabla, FILE *pcorref)//Función que registra un av
 	//Se añade el Avión.
 	       
 	tabla->refresh=TRUE;//Hay que ir actualizando los aviones que salen y entran, si es que no estaban ya registrados.
-	if(tabla->lista[numeroVuelo-1].finish=FALSE)
+	if(tabla->lista[numeroVuelo-1].finish==FALSE)
 	tabla->finished++;//Incrementamos el numero de aviones que tenemos.
 	       
 	getchar( ); 
