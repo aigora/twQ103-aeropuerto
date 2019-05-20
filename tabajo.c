@@ -333,7 +333,7 @@ int mediaAterrizaje(Avion *tabla, int n)//Función que calcula la media de los f
              sec=0;
     }
     
-	printf("\nMedia del aterrizajen: %d:%d:%d (%d finalizados de %d participantes)\n", hr,min,sec , n, NUM_VUELOS);
+	printf("\nMedia del aterrizajen: %d:%d:%d (%d finalizados de %d vuelos)\n", hr,min,sec , n, NUM_VUELOS);
 	
  system("pause");
 	return OK;
