@@ -287,7 +287,7 @@ int ordenarAterrizaje(Aterrizaje *tabla)//Función que ordena el vector de avion
      }              
    }
 
-printf("Clasificacion de Aterrizaje\n\tPuesto\tNumero de vuelo\tTiempo\tcompania aerea\n");
+printf("Clasificacion de Aterrizaje\n\tPuesto\tNumero de vuelo\tTiempo\n");
 
 for(i=0;i<tam;i++)//Ahora se recorre el vector de manera habitual
   
