@@ -189,7 +189,7 @@ int registraAvion(Aterrizaje *tabla, FILE *pcorref)//Función que registra un av
 	
 	while(correct==FALSE)//Control de errores para comprobar que las cosas introducidas están de acuerdo a lo pedido.
 	{
-		if((numeroVuelo<NUM_VUELOS)&&(numeroVuelo>0) && (horas>=0) && (minutos>=0) && (minutos<=59) && (segundos>=0) && (segundos<=59))
+		if((numeroVuelo<=NUM_VUELOS)&&(numeroVuelo>0) && (horas>=0) && (minutos>=0) && (minutos<=59) && (segundos>=0) && (segundos<=59))
 			correct=TRUE;//Se cumplen todas las sentencias.
 		else//Seguirá preguntando hasta que los datos estén correctos.
 		{
